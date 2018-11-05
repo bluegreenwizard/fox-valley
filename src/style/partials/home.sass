@@ -1,0 +1,80 @@
+$trans-black: rgba(0, 0, 0, 0.4)
+$trans-white: rgba(255, 255, 255, 0.4)
+
+.blitter
+  &__image
+    height: auto
+    max-width: 100%
+
+.quote
+  font-family: $header-font
+  margin: 2.5rem auto
+  padding: 2rem
+  border-bottom: 1px solid #333
+  border-top: 1px solid #333
+  border-left: none
+  
+  width: 80%
+  font-size: 1.3rem
+  color: $eerie-black
+  background: none
+  font-style: italic
+
+.section
+  height: 20rem
+  text-align: center
+  background-size: cover
+
+.card
+  display: flex
+  flex-direction: column
+  justify-content: center
+  &__title
+    font-size: 1.7rem
+    font-family: $main-font
+  &__inner-wrapper
+    &--inset
+      margin: 3.2rem
+      padding: .5rem
+  &__paragraph
+    font-size: 0.7rem
+    line-height: 1rem
+  &__link-list
+    list-style: none
+    padding: 0
+    text-align: left
+  &__list-link
+    text-decoration: none
+    color: $raisin-black
+    font-weight: bold
+    font-size: 1rem
+    transition: padding 0.1s
+    &:hover
+      color: $eerie-black
+      padding: .2rem
+    
+
+#learn-more-section
+  background: $learn-more-background
+  background-size: cover
+  color: white
+
+#learn-more-what-is
+  .card__inner-wrapper
+    background: $trans-black
+
+#learn-more-cta
+  background: $trans-black
+
+#activites-section
+  background: $events-background
+
+#activites-local
+  background: $trans-white
+  .card__title
+    text-align: left
+
+#smallcal
+  .fc-scroller
+    background: $trans-white
+    height: 300px !important

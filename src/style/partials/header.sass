@@ -2,7 +2,7 @@ $nav-height: 2.7rem
     
 // HEADER
 .main-header
-  background-color: $secondary
+  background-color: $primary
   display: flex
   flex-direction: column
   justify-content: space-between
@@ -13,15 +13,13 @@ $nav-height: 2.7rem
     margin: 0
     padding: 0.5rem 1rem
   &__nav-list-item-link, &__title-link
-    color: $header-font-color
+    color: $raisin-black
     text-decoration: none
     &:hover
       color: $tertiary
   &__title-link
     transition: color 1s ease-out
   &__nav 
-    background: $eerie-black
-    height: $nav-height
   &__nav-list
     list-style: none
     display: flex
@@ -37,4 +35,4 @@ $nav-height: 2.7rem
     line-height: $nav-height
     &--current
       color: $tertiary
-      background-color: $header-font-color
+      background-color: $raisin-black

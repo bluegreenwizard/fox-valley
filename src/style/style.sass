@@ -4,16 +4,17 @@
 $primary: #E2EBCE
 $secondary: #34252F
 $tertiary: #D6C9D2
-$header-font-color: #6E5866
 $background: #34252F
+$violet-silver: #6E5866
 $raisin-black: #261B22
 $eerie-black: #1C1319
 
 $content-width: 102.4rem
+$section-height: 50rem
 
 //Fonts
 $header-font: 'Aref Ruqaa', serif
-$subheader-font: 'Lora', serif
+$main-font: 'Lora', serif
 
 //Background Images
 $learn-more-background: url("../images/flowers4.jpg") 0 center no-repeat
@@ -22,197 +23,22 @@ $events-background: url("../images/flowers1.jpg") 0 center no-repeat
 body
   background-color: $primary
   font-size: 10px
-
-#wrapper
-  max-width: 100rem
-  margin: auto
+  font-family: $main-font
   background-color: $primary
 
+.l-wrapper
+  max-width: 100rem
+  margin: auto
+
+.l-flexrow
+  display: flex
+
+.l-flexitem
+  width: 50%
+
 @import './partials/header.sass'
+@import './partials/home.sass'
 
-// CONTENT
-.blitter
-  &__image
-    height: auto
-    max-width: 100%
-
-#blitter
-  position: relative
-  img.blitter
-    z-index: 1
-    position: absolute
-    top: 0
-    left: 0
-  //Give parent div proper height
-  img.spacer
-    position: relative
-
-#blitter img.active
-  z-index: 3
-
-#blitter img.next
-  z-index: 2
-
-#events
-  padding: 2em
-
-
-.generic-section-content
-  margin-top: 5vh 
-  margin-right: 10vw
-  margin-bottom: 5vh
-  margin-left: 10vw
-  p
-    width: 100%
-    margin-top: 2rem
-    font-size: 1.6rem
-
-  p.callout
-    background: #656
-    color: white
-    padding: 2rem
-    font-size: 1.75rem
-
-.quote
-  font-family: $header-font
-  margin: 2.5rem auto
-  padding: 2rem
-  border-bottom: 1px solid #333
-  border-top: 1px solid #333
-  border-left: none
-  
-  width: 80%
-  font-size: 1.2rem
-  color: $eerie-black
-  background: none
-  font-style: italic
-
-.home section
-  width: 100% !important
-  height: 400px
-  clear: both
-  margin: 0 !important
-
-#home-learn-more
-  border-top: 5px solid $primary
-  width: 100%
-  background: $learn-more-background
-  background-size: cover
-  color: white
-
-#home-learn-more-content
-  padding: 5em
-  height: 395px
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  h2
-    width: 100%
-    color: white
-    background: rgba(0, 0, 0, 0.4)
-    margin: 0
-    padding: 15px
-  p
-    padding: 1em
-    width: 100%
-    margin: 0
-    background: rgba(0, 0, 0, 0.4)
-
-#home-learn-more-cta
-  background: rgba(0, 0, 0, 0.4)
-  position: relative
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  flex-grow: none
-  height: 395px
-
-#home-events
-  position: relative
-  height: 400px
-  background: $events-background
-  background-size: cover
-  overflow: hidden
-
-#home-events-content
-  background: rgba(255, 255, 255, 0.4)
-  padding: 5em
-  height: 400px
-  h2
-    padding: 0 15px
-  ul
-    list-style: none
-    text-decoration: none
-    padding: 15px
-    a
-      color: $header-font-color
-      font-weight: bold
-      font-size: 1.5em
-      font-family: 'Lora'
-
-#activity-row
-  position: absolute
-  width: 100%
-  top: 0
-  left: 0
-  margin: 0
-  padding: 0
-
-.activity-div
-  margin: 0
-  position: absolute
-  display: none
-  left: 0
-  top: 0
-  padding: 40px 0
-  height: 400px
-  color: white
-  background-color: $background
-  opacity: 0
-  animation: 0.7s slidein forwards
-  z-index: 3
-  p
-    // font-size: 1em
-  h3
-    margin-top: 0
-  div
-    padding: 0 3em
-  .activity-back
-    a
-      display: block
-      position: absolute
-      background-color: $raisin-black
-      top: 0
-      left: 0
-      height: 25px
-      width: 100%
-      font-size: 25px
-      line-height: 25px
-      color: #ffffff
-    a:hover
-      text-decoration: none
-      color: $primary
-      background-color: $eerie-black
-
-
-@keyframes slidein
-  from
-    opacity: 0
-    transform: translateY(100%)
-  to
-    opacity: 1
-    transform: translateX(0%)
-
-.slidein
-  display: block
-
-#smallcal
-  padding: 2em
-  .fc-scroller
-    background: rgba(255, 255, 255, 0.4)
-    height: 300px !important
 
 #calendar
   clear: left
@@ -252,10 +78,10 @@ body
   background-color: $primary
   padding: 3em
   clear: both
-  color: $header-font-color
+  color: $raisin-black
   text-align: right
   a
-    color: $header-font-color
+    color: $raisin-black
 
 #faq-content
   section
@@ -297,10 +123,10 @@ body
     display: block
     &:hover
       color: black
-      background: rgba(255, 255, 255, 0.4)
+      background: $trans-white
   .current
     color: black
-    background: rgba(255, 255, 255, 0.4)
+    background: $trans-white
 
 #backtop
   display: none
@@ -350,14 +176,14 @@ body
   padding: 5em
 
 #contact-us
-  background: rgba(0, 0, 0, 0.4)
+  background: $trans-black
   padding: 1.5em
   color: white
   fieldset
     border: 1px solid white
     margin: 1em 0
     padding-left: 1em
-    background: rgba(0, 0, 0, 0.4)
+    background: $trans-black
   legend
     width: auto
     font-size: 1.2em
@@ -403,8 +229,8 @@ body
   top: 20px
   height: 3px
   width: 30px
-  background: $header-font-color
-  box-shadow: 0 10px 0 0 $header-font-color, 0 20px 0 0 $header-font-color
+  background: $raisin-black
+  box-shadow: 0 10px 0 0 $raisin-black, 0 20px 0 0 $raisin-black
   a
     position: absolute
     margin-left: -2px
@@ -486,7 +312,7 @@ body
   #home-learn-more-content
     padding: 120px 0
     height: auto
-    background: rgba(0, 0, 0, 0.4)
+    background: $trans-black
     h2, p
       background: none
   #home-events
