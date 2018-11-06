@@ -21,7 +21,7 @@ $trans-white: rgba(255, 255, 255, 0.4)
   font-style: italic
 
 .section
-  height: 20rem
+  height: 25rem
   text-align: center
   background-size: cover
 
@@ -31,14 +31,16 @@ $trans-white: rgba(255, 255, 255, 0.4)
   justify-content: center
   &__title
     font-size: 1.7rem
-    font-family: $main-font
+    font-family: $subheader-font
+    font-weight: normal
   &__inner-wrapper
     &--inset
       margin: 3.2rem
-      padding: .5rem
+      padding: .7rem
   &__paragraph
-    font-size: 0.7rem
-    line-height: 1rem
+    font-size: 1rem
+    line-height: 1.2rem
+    text-shadow: 1px 1px $eerie-black
   &__link-list
     list-style: none
     padding: 0
@@ -62,6 +64,8 @@ $trans-white: rgba(255, 255, 255, 0.4)
 #learn-more-what-is
   .card__inner-wrapper
     background: $trans-black
+    .card__btn
+        display: none
 
 #learn-more-cta
   background: $trans-black
@@ -73,6 +77,8 @@ $trans-white: rgba(255, 255, 255, 0.4)
   background: $trans-white
   .card__title
     text-align: left
+    .card__link-list
+        font-size: 1.2rem
 
 #smallcal
   .fc-scroller
