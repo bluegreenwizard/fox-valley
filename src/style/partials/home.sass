@@ -1,24 +1,62 @@
-$trans-black: rgba(0, 0, 0, 0.4)
-$trans-white: rgba(255, 255, 255, 0.4)
+$quote-border-padding: 2rem
+$quote-border-size: 3px solid
+
+.splash
+  position: relative
+  background: $trans-white
 
 .blitter
   &__image
     height: auto
-    max-width: 100%
+    min-width: 100%
+
 
 .quote
-  font-family: $header-font
-  margin: 2.5rem auto
-  padding: 2rem
-  border-bottom: 1px solid #333
-  border-top: 1px solid #333
-  border-left: none
-  
-  width: 80%
-  font-size: 1.3rem
-  color: $eerie-black
-  background: none
-  font-style: italic
+  // background: $trans-black
+  padding: 2rem 0
+  position: absolute
+  bottom: 0
+  overflow: hidden
+  &__bq
+    animation: popIn 4s .5s forwards
+    color: white
+    font-family: $header-font
+    font-size: 1.6rem
+    font-style: italic
+    font-weight: bold
+    opacity: 0
+    padding: 0 4rem
+    text-shadow: 2px 2px $eerie-black
+    transform: translate(0, 10rem)
+    &:after, &:before
+        content: ""
+        display: block
+        margin: 0 auto
+        width: 0%
+    &:after
+        padding-top: $quote-border-padding
+        border-bottom: $quote-border-size
+        animation: expand 2s 2.6s 1 forwards
+    &:before
+        padding-bottom: $quote-border-padding
+        border-top: $quote-border-size
+        animation: expand 2s 2.4s 1 forwards
+
+@keyframes expand
+    from
+        width: 0%
+    to
+        width: 100%
+
+@keyframes popIn
+    0%
+        opacity: 0
+        transform: translate(0, 10rem)
+    50%
+        transform: translate(0)
+    100%
+        opacity: 100
+        transform: translate(0)
 
 .section
   height: 25rem
@@ -47,12 +85,10 @@ $trans-white: rgba(255, 255, 255, 0.4)
     text-align: left
   &__list-link
     text-decoration: none
-    color: $raisin-black
     font-weight: bold
     font-size: 1rem
     transition: padding 0.1s
     &:hover
-      color: $eerie-black
       padding: .2rem
     
 
@@ -77,8 +113,9 @@ $trans-white: rgba(255, 255, 255, 0.4)
   background: $trans-white
   .card__title
     text-align: left
-    .card__link-list
-        font-size: 1.2rem
+  .card__list-link
+    color: $black-but-not-quite-black
+    font-size: 1.2rem
 
 #smallcal
   .fc-scroller
